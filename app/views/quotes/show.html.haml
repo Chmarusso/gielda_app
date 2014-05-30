@@ -1,0 +1,20 @@
+%h1=@company.name
+
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th open
+      %th high
+      %th low
+      %th close
+      %th vol
+      %th date
+  %tbody
+    - @quotes.each do |quote|
+      %tr
+        %td=quote.open
+        %td=quote.high
+        %td=quote.low
+        %td=quote.close
+        %td=quote.vol
+        %td=quote.date
