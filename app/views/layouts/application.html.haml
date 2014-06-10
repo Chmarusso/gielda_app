@@ -5,8 +5,9 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body{id: "top-body"}
     .container
+      #loading-icon-wrapper
       .navbar.navbar-inverse
         .navbar-header
           %button.navbar-toggle{"data-target" => ".navbar-inverse-collapse", "data-toggle" => "collapse", type: "button"}
@@ -16,6 +17,13 @@
           %a.navbar-brand{href: "#"} System Wspomagania Decyzji Inwestycyjnych
       .row
         .col-md-3
+          .panel.panel-default
+            .panel-heading Menu
+            .panel-body
+              .list-group
+                = link_to "Quiz inwestora", quiz_path, :class => "list-group-item", :data => { :push => "true", :target => "#wiselinks" }
+                = link_to "Ranking TOP10", ranking_path, :class => "list-group-item", :data => { :push => "true", :target => "#wiselinks" }
+                = link_to "Kalkulator", benchmark_path, :class => "list-group-item", :data => { :push => "true", :target => "#wiselinks" }
           .panel.panel-default
             .panel-heading Dostępne spółki
             .panel-body

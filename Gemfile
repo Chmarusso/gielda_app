@@ -11,6 +11,7 @@ gem 'rubyzip', '~> 1.1.2'
 gem 'haml-rails', '~> 0.5.3'
 gem 'wiselinks'
 gem 'activerecord-import', '~> 0.5.0'
+gem 'jquery-ui-rails'
 
 group :doc do
   gem 'sdoc', require: false

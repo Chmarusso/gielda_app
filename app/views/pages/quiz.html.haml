@@ -1,0 +1,105 @@
+%h1 Profil inwestora
+%p{id: "quizmsg"} Uzupełnij krótką ankietę aby poznać swój profil
+
+.row
+  .col-md-12
+    %form#myForm{role: "form"}
+      .well
+        %b Ile masz lat?
+        .radio
+          %label
+            %input{name: "pyt1", type: "radio", value: "-1"}/
+            mniej niż 25
+        .radio
+          %label
+            %input{name: "pyt1", type: "radio", value: "0"}/
+            25-35
+        .radio
+          %label
+            %input{name: "pyt1", type: "radio", value: "1"}/
+            powyżej 35
+      .well
+        %b Jak oceniasz swoją sytuację finansową?
+        .radio
+          %label
+            %input{name: "pyt2", type: "radio", value: "-1"}/
+            dobrze
+        .radio
+          %label
+            %input{name: "pyt2", type: "radio", value: "0"}/
+            średnio
+        .radio
+          %label
+            %input{name: "pyt2", type: "radio", value: "1"}/
+            słabo
+      .well
+        %b Jaki jest Twój horyzont inwestycyjny?
+        .radio
+          %label
+            %input{name: "pyt3", type: "radio", value: "-1"}/
+            mniej niż rok
+        .radio
+          %label
+            %input{name: "pyt3", type: "radio", value: "0"}/
+            1-3 lata
+        .radio
+          %label
+            %input{name: "pyt3", type: "radio", value: "1"}/
+            powyżej 3 lat
+      .well
+        %b Jak oceniasz swoją wiedzę na temat rynku funduszy, giełdy?
+        .radio
+          %label
+            %input{name: "pyt4", type: "radio", value: "-1"}/
+            dobrze
+        .radio
+          %label
+            %input{name: "pyt4", type: "radio", value: "0"}/
+            średnio
+        .radio
+          %label
+            %input{name: "pyt4", type: "radio", value: "1"}/
+            słabo
+      .well
+        %b Jaki procent oszczędności masz ulokowany w inwestycjach giełdowych?
+        .radio
+          %label
+            %input{name: "pyt5", type: "radio", value: "-1"}/
+            powyżej 60%
+        .radio
+          %label
+            %input{name: "pyt5", type: "radio", value: "0"}/
+            30-60%
+        .radio
+          %label
+            %input{name: "pyt5", type: "radio", value: "1"}/
+            mniej niż 30%
+      .well
+        %b Gdyby wartość Twojej inwestycji spadła o 15% nadal byś ją kontynuował/a?
+        .radio
+          %label
+            %input{name: "pyt6", type: "radio", value: "-1"}/
+            Nie
+        .radio
+          %label
+            %input{name: "pyt6", type: "radio", value: "0"}/
+            Nie jestem pewien/a
+        .radio
+          %label
+            %input{name: "pyt6", type: "radio", value: "1"}/
+            Tak
+      .well
+        %b Jak oceniasz własny stopień akceptacji ryzyka inwestycyjnego?
+        .radio
+          %label
+            %input{name: "pyt7", type: "radio", value: "-1"}/
+            Oczekuję wysokich zysków z inwestycji przy jednoczesnej akceptacji ryzyka poniesienia znacznych strat
+        .radio
+          %label
+            %input{name: "pyt7", type: "radio", value: "0"}/
+            Oczekuję zysków wyższych niż z lokaty przy jednoczesnej akceptacji ryzyka spadku wartości inwestycji
+        .radio
+          %label
+            %input{name: "pyt7", type: "radio", value: "1"}/
+            Oczekuję stopniowego przyrostu majątku przy jednoczesnym braku akceptacji ryzyka spadku wartości inwestycji
+      %button.btn.btn-default{type: "submit"} Sprawdź wynik

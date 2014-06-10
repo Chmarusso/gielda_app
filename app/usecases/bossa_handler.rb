@@ -76,7 +76,19 @@ class BossaHandler
   end
 
   def beta_factor(company, start_date, end_date)
+    wig = Company.by_name("WIG")
+    ri_mean = Quote.mean_for_company(company, start_date, end_date)
+    rm_mean = Quote.mean_for_company(wig, start_date, end_date)
 
+    company_results = company.rates_of_return(start_date, end_date).collect {|x| x-ri_mean }
+    wig_results = wig.rates_of_return(start_date, end_date).collect {|x| x-rm_mean }
+    wig_squared = wig_results.collect {|x| x=x*x}
+
+    company_x_wig = Array.new
+    company_results.each_with_index do |x, index|
+      company_x_wig << x*wig_results[index]
+    end
+    company_x_wig.sum / wig_squared.sum
   end
 
   def rate_of_return(company, start_date, end_date)

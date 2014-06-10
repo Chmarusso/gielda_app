@@ -1,0 +1,19 @@
+%h1 Ranking TOP10
+%p 
+  Najlepsze spółki według wskaźnika Jensen'a. Ostatnia aktualizacja
+  %i=@last_update
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-hover
+      %thead
+        %tr
+          %th Nazwa spółki
+          %th Ile dni notowana?
+          %th Wskaźnik Jensena
+      %tbody
+        - @top_companies.each do |company|
+          %tr
+            %td=company.name
+            %td=company.number_of_days
+            %td=number_with_precision(company.rating, :precision => 2)

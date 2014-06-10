@@ -1,0 +1,23 @@
+%h1 Kalkulator stóp zwrotu
+%p Oblicz stopę zwrotu z inwestycji w spółkę w zadanym okresie
+
+
+%form#myForm2{role: "form"}
+  .well
+    .form-group
+      %label{for: "companyname"} Spółka
+      %input#companyname.form-control{placeholder: "wprowadź nazwę spółki", type: "text"}/
+    .form-group
+      %label{for: "start_date"} Data otwarcia
+      #datetimepicker1.input-append.date
+        %input#start_date{"data-format" => "dd/MM/yyyy", name: "start_date", placeholder: "wybierz datę startu okna", type: "text"}/
+        %span.add-on
+          %span.glyphicon.glyphicon-time
+    .form-group
+      %label{for: "end_date"} Data zamknięcia
+      #datetimepicker2.input-append.date
+        %input#end_date{"data-format" => "dd/MM/yyyy", name: "end_date", placeholder: "wybierz datę końca okna", type: "text"}/
+        %span.add-on
+          %span.glyphicon.glyphicon-time
+    %button.btn.btn-default{type: "submit"} Sprawdź wynik
+#results-benchmark

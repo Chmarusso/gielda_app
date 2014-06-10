@@ -1,5 +1,13 @@
-%h1=@company.name
-
+%h1
+  %span{class: "label label-primary"}
+    =@company.name
+%h2
+  Notowania od
+  %span{class: "label label-info"}
+    =@quotes.last.date
+  do
+  %span{class: "label label-info"}
+    =@quotes.first.date
 %table.table.table-striped.table-hover
   %thead
     %tr
