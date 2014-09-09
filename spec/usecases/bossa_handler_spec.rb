@@ -5,7 +5,7 @@ describe "#BossaHandler" do
   subject(:handler) { BossaHandler.new }
   let(:first_result_file) { "06MAGNA.mst" }
   let(:second_result_file) { "4FUNMEDIA.mst" }
-  let(:company) { FactoryGirl.build :company } 
+  let(:company) { FactoryGirl.build :company }
  
   it "downloads zip" do
     handler.download_zip("#{Rails.root}/spec/support/test_zip.zip")

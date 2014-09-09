@@ -1,2 +1,17 @@
-%h1 Pages#wallet
-%p Find me in app/views/pages/wallet.html.haml
+%h1 Twój portfel 
+%p Portfel inwestycyjny dostosowany do profilu inwestora
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-hover
+      %thead
+        %tr
+          %th Nazwa spółki
+          %th Kwota
+      %tbody
+        - @companies.each do |company|
+          %tr
+            %td=company[:name]
+            %td=number_with_precision(company[:amount], :precision => 2)
+
+

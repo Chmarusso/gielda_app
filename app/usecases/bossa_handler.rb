@@ -113,9 +113,6 @@ class BossaHandler
     date
   end
 
-  private 
-
-
 
   def increment_added_quotes
     if self.added_quotes.nil?
@@ -141,7 +138,7 @@ class BossaHandler
     result = nil
     mst_files = Dir["#{Rails.root}/tmp/unziped/**/*.mst"]
     mst_files.each do |p|
-      if p.include?(company)
+      if p.sub("#{Rails.root}/tmp/unziped/", "").sub(".mst", "") == company
         result = p
         break
       end

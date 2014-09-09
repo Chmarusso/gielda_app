@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   def search
-    results = Company.where("LOWER(name) like ?", "%#{params[:term]}%").collect{ |x| {value: x.name, label: x.name} }
+    results = Company.where("LOWER(name) like ?", "%#{params[:term].downcase}%").collect{ |x| {value: x.name, label: x.name} }
     render :json => results 
   end
 

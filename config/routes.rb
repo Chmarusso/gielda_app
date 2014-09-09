@@ -5,6 +5,7 @@ Gielda::Application.routes.draw do
   get "pages/ranking", :as => :ranking
   get "pages/benchmark", :as => :benchmark
   get "pages/wallet"
+  post "pages/set_profile"
   get "quotes/index"
   get "quotes/show/:id" => "quotes#show", :as => :quotes_show
 end
